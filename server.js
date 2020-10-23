@@ -9,15 +9,19 @@ const PORT = process.env.PORT | 5000;
 
 const app = express();
 
-let count = 0;
+let count = 0; // API call count
 
 // middlewares
 app.use(bodyParser.json());
 app.use(cors());
 
 // routes
+
+// endpoint to add the quote
 app.post("/add", (req, res) => {
   count++;
+
+  // as mentioned in the task clearing database before inserting the document
   Quote.deleteMany({}, (err) => {
     if (err) {
       console.log(err);
@@ -38,6 +42,8 @@ app.post("/add", (req, res) => {
     });
   });
 });
+
+// End Point to update the quote
 
 app.post("/update", (req, res) => {
   count++;
@@ -60,6 +66,8 @@ app.post("/update", (req, res) => {
     }
   );
 });
+
+// API call endpoint
 
 app.get("/count", (req, res) => {
   return res.json({
