@@ -3,12 +3,16 @@ import ClockComponent from "./clock/ClockComponent";
 import QuoteComponent from "./quote/QuoteComponent";
 
 import "./app.css";
+import NewsComponent from "./news/NewsComponent";
 
 const App = () => {
   return (
-    <div className="app">
+    <div>
+      <div className="app">
       <ClockComponent />
       <QuoteComponent />
+    </div>
+    <NewsComponent />
     </div>
   );
 };

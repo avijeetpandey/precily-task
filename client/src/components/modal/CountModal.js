@@ -5,7 +5,7 @@ import axios from "axios";
 
 import mail from "../../assets/mail.png";
 
-const CountModal = ({quote}) => {
+const CountModal = ({ quote }) => {
   const [open, setOpen] = useState(false);
 
   const [apiCalls, setApiCalls] = useState(-1);
