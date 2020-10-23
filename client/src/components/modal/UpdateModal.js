@@ -8,20 +8,27 @@ import {
   Image,
 } from "semantic-ui-react";
 
+import axios from "axios";
+
 import mail from "../../assets/mail.png";
 
-const UpdateModal=({quote,setQuote}) => {
+const UpdateModal = ({ quote, setQuote }) => {
   const [open, setOpen] = useState(false);
 
-  const update = () => {};
-
   const handleChange = (event) => {
-    
+    setQuote(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form Submitted");
+
+    axios
+      .post("/update", {
+        newQuote: quote,
+      })
+      .then((response) => window.alert("Quote updated"))
+      .catch((err) => console.log(err));
+
     setOpen(false);
   };
 

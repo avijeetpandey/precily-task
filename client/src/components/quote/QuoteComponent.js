@@ -8,7 +8,7 @@ import { Button } from "semantic-ui-react";
 import UpdateModal from "../modal/UpdateModal";
 
 const QuoteComponent = () => {
-  const [quote, setQuote] = useState("Every master was once a beginer");
+  const [quote, setQuote] = useState("");
 
   return (
     <div className="quotes">

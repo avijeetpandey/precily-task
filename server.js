@@ -36,6 +36,27 @@ app.post("/add", (req, res) => {
   });
 });
 
+app.post("/update", (req, res) => {
+  Quote.findOneAndUpdate(
+    { id: 1 },
+    {
+      $set: { quote: req.body.newQuote },
+    },
+    { new: true },
+    (err, quote) => {
+      if (err) {
+        return res.json({
+          message: "Unable to find the quote",
+        });
+      } else {
+        return res.json({
+          message: "Updated Succesfully",
+        });
+      }
+    }
+  );
+});
+
 app.listen(PORT, () => {
   console.log("Server is up and running");
 });
