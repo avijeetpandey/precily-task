@@ -10,6 +10,7 @@ import {
 
 import mail from "../../assets/mail.png";
 
+import axios from "axios";
 const AddModal = ({ quote, setQuote }) => {
   const [open, setOpen] = useState(false);
   const [addQuote, setAddQuote] = useState("");
@@ -22,7 +23,15 @@ const AddModal = ({ quote, setQuote }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form Submitted");
+
+    axios
+      .post("/add", {
+        quote: addQuote,
+      })
+      .then((response) => window.alert("Quote added "))
+      .catch((err) => console.log(err));
+    setQuote(addQuote);
+    setAddQuote("");
     setOpen(false);
   };
 
