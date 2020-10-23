@@ -5,11 +5,11 @@ all the three components are resizable and can shrink /grow according to their n
 
 ## Stack :muscle:
 - **Frontend**
-    - [ x ] React , Semantic-UI 
+    - [x] React , Semantic-UI 
 - **Backend**
-    - [ x ] NodeJs , Express
+    - [x] NodeJs , Express
 - **Database**
-    - [ x ] MongoDB
+    - [x] MongoDB
 
 ## API Description
 The API supports three endpoints ie
