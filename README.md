@@ -17,7 +17,7 @@ all the three components are resizable and can shrink /grow according to their n
 
 The API supports three endpoints ie
 
-- **/add** for adding the quotes
+- **/add** for adding the quotes 
 - **/update** for updating the quotes
 - **/count** for returning the count of the API calls
 
@@ -40,4 +40,11 @@ npm run dev ( This will start both the client and server simultaneoulsy)
 ```
 
 ## Folder Structure Description
+- **Client**
+    - [x] **Components :**  This folder contains varoius react components used throughout the project
+- **Server**
+    - [x] **Models :** Contains the basic schema structure of the quote
+    - [x] **Connection :** Contains database connection related configuration 
 
+
+## APP Screenshots (UI)
