@@ -3,15 +3,9 @@ import { Resizable } from "re-resizable";
 import "react-clock/dist/Clock.css";
 import Clock from "react-clock";
 
-const ClockComponent = () => {
-  const style = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    border: "solid 1px #ddd",
-    background: "#f0f0f0",
-  };
+import "./ClockComponent.css";
 
+const ClockComponent = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -25,14 +19,15 @@ const ClockComponent = () => {
   return (
     <div>
       <Resizable
-        style={style}
+        className="clock-style"
         defaultSize={{
-          width: 320,
+          width: "30vw",
           height: "80vh",
         }}
       >
         <Clock value={time} />
       </Resizable>
+
     </div>
   );
 };
