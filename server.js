@@ -9,12 +9,15 @@ const PORT = process.env.PORT | 5000;
 
 const app = express();
 
+let count = 0;
+
 // middlewares
 app.use(bodyParser.json());
 app.use(cors());
 
 // routes
 app.post("/add", (req, res) => {
+  count++;
   Quote.deleteMany({}, (err) => {
     if (err) {
       console.log(err);
@@ -37,6 +40,7 @@ app.post("/add", (req, res) => {
 });
 
 app.post("/update", (req, res) => {
+  count++;
   Quote.findOneAndUpdate(
     { id: 1 },
     {
@@ -55,6 +59,12 @@ app.post("/update", (req, res) => {
       }
     }
   );
+});
+
+app.get("/count", (req, res) => {
+  return res.json({
+    count: count,
+  });
 });
 
 app.listen(PORT, () => {

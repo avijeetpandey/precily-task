@@ -4,8 +4,8 @@ import { Resizable } from "re-resizable";
 import "./QuoteComponents.css";
 
 import AddModal from "../modal/AddModal";
-import { Button } from "semantic-ui-react";
 import UpdateModal from "../modal/UpdateModal";
+import CountModal from "../modal/CountModal";
 
 const QuoteComponent = () => {
   const [quote, setQuote] = useState("");
@@ -23,6 +23,7 @@ const QuoteComponent = () => {
         <div>
           <AddModal quote={quote} setQuote={setQuote} />
           <UpdateModal quote={quote} setQuote={setQuote} />
+          <CountModal quote={quote} />
         </div>
       </Resizable>
     </div>
